@@ -4,30 +4,8 @@ let path = require('path')
 let levelling = require('../lib/levelling')
 let tags = {
   'main': 'Main',
-  'game': 'Game',
-  'xp': 'Exp & Limit',
-  'sticker': 'Sticker',
-  'kerang': 'Kerang Ajaib',
-  'quotes': 'Quotes',
-  'admin': 'Admin',
-  'group': 'Group',
-  'premium': 'Premium',
-  'internet': 'Internet',
-  'anonymous': 'Anonymous Chat',
-  'nulis': 'MagerNulis & Logo',
-  'downloader': 'Downloader',
-  'tools': 'Tools',
-  'fun': 'Fun',
-  'database': 'Database',
-  'vote': 'Voting',
-  'absen': 'Absen',
-  'quran': 'Al Qur\'an',
-  'jadibot': 'Jadi Bot',
-  'owner': 'Owner',
-  'host': 'Host',
   'advanced': 'Advanced',
   'info': 'Info',
-  '': 'No Category',
 }
 const defaultMenu = {
   before: `
@@ -43,7 +21,7 @@ const defaultMenu = {
 │ Tanggal Islam: *%dateIslamic*
 │ Waktu: *%time*
 │
-│ Runtime: *%uptime (%muptime)*
+│ Runtime: *%uptime*
 ╰────
 %readmore`.trimStart(),
   header: '╭─「 %category 」',
@@ -134,6 +112,22 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       after
     ].join('\n')
     text = typeof conn.menu == 'string' ? conn.menu : typeof conn.menu == 'object' ? _text : ''
+    let replace = {
+      '%': '%',
+      p: _p, uptime, muptime,
+      me: conn.user.name,
+      npmname: package.name,
+      npmdesc: package.description,
+      version: package.version,
+      exp: exp - min,
+      maxexp: xp,
+      totalexp: exp,
+      xp4levelup: max - exp,
+      github: package.homepage ? package.homepage.url || package.homepage : '[unknown github url]',
+      level, limit, name, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role,
+      readmore: readMore
+    }
+    text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
      templateMessage: {
          hydratedTemplate: {
@@ -175,22 +169,6 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
          }
        }
      }), { userJid: m.sender, quoted: m });
-    let replace = {
-      '%': '%',
-      p: _p, uptime, muptime,
-      me: conn.user.name,
-      npmname: package.name,
-      npmdesc: package.description,
-      version: package.version,
-      exp: exp - min,
-      maxexp: xp,
-      totalexp: exp,
-      xp4levelup: max - exp,
-      github: package.homepage ? package.homepage.url || package.homepage : '[unknown github url]',
-      level, limit, name, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role,
-      readmore: readMore
-    }
-    text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     //conn.reply(m.chat, text.trim(), m)
     return await conn.relayMessage(
          m.chat,
