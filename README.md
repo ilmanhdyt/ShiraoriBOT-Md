@@ -15,3 +15,17 @@
 <a href="https://github.com/ilmanhdyt/ShiraoriBOT-Md/network/members"><img title="Forks" src="https://img.shields.io/github/forks/ilmanhdyt/ShiraoriBOT-Md?color=red&style=flat-square"></a>
 <a href="https://github.com/ilmanhdyt/ShiraoriBOT-Md/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/ilmanhdyt/ShiraoriBOT-Md?label=Watchers&color=blue&style=flat-square"></a>
 </p>
+
+---
+
+# SHIRAOEI BOT Whatsapp MD
+## Information
+> ShiraoeiBOT whatsapp using a Baileys library.
+> Jika kamu menemukan semacam bug, harap untuk dimaklumi sementara
+>
+>
+
+<h3 align="center">Made by :</h3>
+<p align="center">
+  <a href="https://github.com/ilmanhdyt"><img src="https://avatars.githubusercontent.com/u/74960869?v=4" height="128" width="128" /></a>
+</p>
