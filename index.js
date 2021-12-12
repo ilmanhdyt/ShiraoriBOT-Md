@@ -13,7 +13,7 @@ CFonts.say('ShiraoriBOT\nMulti-Device', {
   align: 'center',
   gradient: ['red', 'magenta']
 })
-CFonts.say(`'${package.name}' By @${package.author.name || package.author}`, {
+CFonts.say(`Shiraori BOT Md By Ilman`, {
   font: 'console',
   align: 'center',
   gradient: ['red', 'magenta']
