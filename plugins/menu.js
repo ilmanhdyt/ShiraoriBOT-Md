@@ -3,9 +3,11 @@ let fs = require('fs')
 let path = require('path')
 let levelling = require('../lib/levelling')
 let tags = {
-  'main': 'Main',
+  'main': 'MENU UTAMA',
+  'fun': 'MENU FUN',
+  'anime'; 'MENU ANIME',
   'advanced': 'Advanced',
-  'info': 'Info',
+  'info': 'MENU INFO',
 }
 const defaultMenu = {
   before: `
