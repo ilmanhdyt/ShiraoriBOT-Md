@@ -18,7 +18,7 @@
 
 ---
 
-# SHIRAOEI BOT Whatsapp MD
+# SHIRAORI BOT Whatsapp MD
 ## Information
 > ShiraoeiBOT whatsapp using a Baileys library.
 > Jika kamu menemukan semacam bug, harap untuk dimaklumi sementara
