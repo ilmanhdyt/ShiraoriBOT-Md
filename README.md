@@ -25,7 +25,7 @@
 >
 > • NOTE: Bot ini masih tahap Beta fiturnya juga masih dikit
 > 
-> • Kalo mau nambah fitur buat folder baru [disini](https://github.com/ilmanhdyt/ShiraoriBOT/tree/Multi-Device/plugins)
+> • Kalo mau nambah fitur buat folder baru [disini](https://github.com/ilmanhdyt/ShiraoriBOT-Md/tree/Multi-Device/plugins)
 
 
 <h3 align="center">Made by :</h3>
