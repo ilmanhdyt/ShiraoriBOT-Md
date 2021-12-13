@@ -20,10 +20,12 @@
 
 # SHIRAORI BOT Whatsapp MD
 ## Information
-> ShiraoeiBOT whatsapp using a Baileys library.
+> ShiraoriBOT whatsapp using a Baileys library.
 > Jika kamu menemukan semacam bug, harap untuk dimaklumi sementara
 >
->
+> • NOTE: Bot ini masih tahap Beta fiturnya juga masih dikit
+> • Kalo mau nambah fitur buat folder baru [disini](https://github.com/ilmanhdyt/ShiraoriBOT/tree/blob/multi-device/plugins)
+
 
 <h3 align="center">Made by :</h3>
 <p align="center">
