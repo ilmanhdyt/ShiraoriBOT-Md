@@ -34,12 +34,12 @@
   <a href="https://github.com/BochilGaming"><img src="https://github.com/BochilGaming.png?size=128" height="128" width="128" /></a>
 </p>
 
-## HOW TO CONNECT TO MONGODB 
+## HOW TO CONNECT TO MONGODB WHEN RUN IN HEROKU
 
 * Create account and database in mongodb atlas [`watch here`](https://youtu.be/rPqRyYJmx2g)
 * when you already have a database, you just need to take mongourl
-* Use MongoUrl and run use `node . --db 'mongourl'`
-* Example `node . -- db 'mongodb+srv://ilman:<password>@cluster0.iiede.mongodb.net/NameYourDatabase?retryWrites=true&w=majority'`
+* Put mongourl in Procfile `web: node . --db 'mongourl'`
+* Example `web: node . -- db 'mongodb+srv://ilman:<password>@cluster0.iiede.mongodb.net/NameYourDatabase?retryWrites=true&w=majority'`
 
 
 ## UNTUK PENGGUNA WINDOWS/VPS/RDP
