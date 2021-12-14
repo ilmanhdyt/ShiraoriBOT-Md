@@ -5,9 +5,9 @@ module.exports = {
     async all(m, chatUpdate) {
         if (m.isBaileys) return
         if (!m.message) return 
-        if (!m.message.buttonsResponseMessage) return
-        let id = m.message.buttonsResponseMessage.selectedButtonId
-        let text = m.message.buttonsResponseMessage.selectedDisplayText
+        if (!(m.message.buttonsResponseMessage || m.message.templateButtonReplyMessage)) return
+        let id = m.message.buttonsResponseMessage?.selectedButtonId || m.message.templateButtonReplyMessage?.selectedId
+        let text = m.message.buttonsResponseMessage?.selectedDisplayText || m.message.templateButtonReplyMessage?.selectedDisplayText
         let isIdMessage = false, usedPrefix
         for (let name in global.plugins) {
             let plugin = global.plugins[name]
@@ -58,7 +58,7 @@ module.exports = {
         messages.key.fromMe = areJidsSameUser(m.sender, this.user.id)
         messages.key.id = m.key.id
         messages.pushName = m.name
-        if (m.isGroup) messages.participant = m.participant
+        if (m.isGroup) messages.participant = m.sender
         let msg = {
             ...chatUpdate,
             messages: [proto.WebMessageInfo.fromObject(messages)],
