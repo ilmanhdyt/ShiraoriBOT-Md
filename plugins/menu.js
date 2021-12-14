@@ -163,7 +163,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
            },
                {
              quickReplyButton: {
-               displayText: 'BUTTON 3',
+               displayText: 'Ping',
                id: '.ping'
              }
 
