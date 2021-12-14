@@ -7,6 +7,7 @@ let tags = {
   'fun': 'MENU FUN',
   'internet': 'MENU INTERNET',
   'anime'; 'MENU ANIME',
+  'owner': 'MENU OWNER',
   'advanced': 'Advanced',
   'info': 'MENU INFO',
 }
