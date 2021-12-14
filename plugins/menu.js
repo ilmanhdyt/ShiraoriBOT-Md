@@ -5,6 +5,7 @@ let levelling = require('../lib/levelling')
 let tags = {
   'main': 'MENU UTAMA',
   'fun': 'MENU FUN',
+  'internet': 'MENU INTERNET',
   'anime'; 'MENU ANIME',
   'advanced': 'Advanced',
   'info': 'MENU INFO',
