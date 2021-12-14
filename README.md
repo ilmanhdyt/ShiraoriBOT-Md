@@ -61,10 +61,15 @@ npm index
 
 ## UNTUK PENGGUNA TERMUX
 ```bash
+pkg update && pkg upgrade
+pkg install git
+pkg install nodejs
+pkg install ffmpeg
+pkg install imagemagick
+pkg install yarn
 git clone https://github.com/ilmanhdyt/ShiraoriBOT-Md
 cd ShiraoriBOT-Md
-npm i
-npm update
+yarn
 node .
 ```
 
@@ -94,7 +99,7 @@ Jika berhasil, akan memberikanmu pesan seperti: `SUCCESS: specified value was sa
  [![Nurutomo](https://github.com/Nurutomo.png?size=150)](https://github.com/Nurutomo) | [![Ilman](https://github.com/ilmanhdyt.png?size=150)](https://github.com/ilmanhdyt) | [![Istikmal](https://github.com/BochilGaming.png?size=150)](https://github.com/BochilGaming)
 ----|----|----
 [Nurutomo](https://github.com/Nurutomo) | [Ilman](https://github.com/ilmanhdyt) | [Istikmal](https://github.com/BochilGaming)
- Author | Recode | yg suka ngebantu 😅
+ Author | Recode | yg sering ngebantu 😅
 
 ## Donate
 - [Saweria](https://saweria.co/ilmanhdyt)
