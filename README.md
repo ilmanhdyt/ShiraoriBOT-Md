@@ -30,9 +30,8 @@
 
 <h3 align="center">Made by :</h3>
 <p align="center">
-  <a href="https://github.com/ilmanhdyt"><img src="https://github.com/ilmanhdyt.png?size=150)](https://github.com/ilmanhdyt" height="128" width="128" /></a>
-</p>
-<a href="https://github.com/BochilGaming"><img src="https://avatars.githubusercontent.com/u/87578425?v=4" height="128" width="128" /></a>
+  <a href="https://github.com/ilmanhdyt"><img src="https://github.com/ilmanhdyt.png?size=128" height="128" width="128" /></a>
+  <a href="https://github.com/BochilGaming"><img src="https://github.com/BochilGaming.png?size=128" height="128" width="128" /></a>
 </p>
 
 
