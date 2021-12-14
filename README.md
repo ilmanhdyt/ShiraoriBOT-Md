@@ -34,6 +34,11 @@
   <a href="https://github.com/BochilGaming"><img src="https://github.com/BochilGaming.png?size=128" height="128" width="128" /></a>
 </p>
 
+## HOW TO CONNECT TO MONGODB 
+
+* Use MongoUrl and run use `node . --db 'mongourl'`
+* Example `node . -- db 'https://mgo'`
+
 
 ## UNTUK PENGGUNA WINDOWS/VPS/RDP
 
