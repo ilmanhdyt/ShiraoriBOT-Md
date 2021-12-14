@@ -36,10 +36,10 @@
 
 ## HOW TO CONNECT TO MONGODB 
 
-* Create account and database in mongodb atlas [`watch here`](https://youtu.be/rPqRyYJmx2g)
-* when you already have a database, you just need to take mongouri.
+* **Create account and database in mongodb atlas** [`watch here`](https://youtu.be/rPqRyYJmx2g)
+* **when you already have a database, you just need to take mongourl**
 * **Use MongoUrl and run use** `node . --db 'mongourl'`
-* Example `node . -- db 'mongodb+srv://ilman:<password>@cluster0.iiede.mongodb.net/<NameYourDatabase?retryWrites=true&w=majority'`
+* **Example** `node . -- db 'mongodb+srv://ilman:<password>@cluster0.iiede.mongodb.net/NameYourDatabase?retryWrites=true&w=majority'`
 
 
 ## UNTUK PENGGUNA WINDOWS/VPS/RDP
