@@ -25,7 +25,7 @@
 >
 > • NOTE: Bot ini masih tahap Beta fiturnya juga masih dikit
 > 
-> • Kalo mau nambah fitur buat file baru [disini](https://github.com/ilmanhdyt/ShiraoriBOT-Md/tree/Multi-Device/plugins)
+> • Kalo mau nambah fitur buat file baru [disini](https://github.com/ilmanhdyt/ShiraoriBOT-Md/tree/Multi-Device/plugins) *Contoh* tebakgambar.js
 
 
 <h3 align="center">Made by :</h3>
