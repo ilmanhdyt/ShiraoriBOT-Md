@@ -83,10 +83,11 @@ Jika berhasil, akan memberikanmu pesan seperti: `SUCCESS: specified value was sa
 ```
 
 # Thanks to
-<a href="https://github.com/Nurutomo"><img src="https://github.com/Nurutomo.png?size=100" width="100" height="100"></a> | [![ILMAN](http://github.com/ilmanhdyt.png?size=100)](http://github.com/ilmanhdyt)
-----|----
+<a href="https://github.com/Nurutomo"><img src="https://github.com/Nurutomo.png?size=100" width="100" height="100"></a> | [![ILMAN](http://github.com/ilmanhdyt.png?size=100)](http://github.com/ilmanhdyt)[Istikmal](https://github.com/BochilGaming.png?size=100)](https://github.com/BochilGaming)
+----|----|
+----
 [Nurutomo](https://github.com/Nurutomo) | [ilman](http://github.com/ilmanhdyt)
-Author | penulis ulang
+Author | penulis ulang | yg suka nolongin
 
 
 ## Donate
