@@ -166,8 +166,8 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
            },
                {
              quickReplyButton: {
-               displayText: 'Ping',
-               id: '.ping'
+               displayText: 'Runtime',
+               id: '.runtime'
              }
 
            }]
