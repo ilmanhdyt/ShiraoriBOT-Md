@@ -4,6 +4,7 @@ let path = require('path')
 let levelling = require('../lib/levelling')
 let tags = {
   'main': 'MENU UTAMA',
+  'sticker': 'MENU CONVERT',
   'group': 'MENU GROUP',
   'fun': 'MENU FUN',
   'internet': 'MENU INTERNET',
