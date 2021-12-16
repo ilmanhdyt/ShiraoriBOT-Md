@@ -24,6 +24,9 @@ global.APIKeys = { // APIKey Here
 global.packname = 'ShiraoriBOT Multi device'
 global.author = 'Ilman'
 
+global.wait = '_*tunggu sedang di proses...*_'
+global.eror = '_*Server Error*_'
+
 global.multiplier = 69 // The higher, The harder levelup
 
 global.rpg = {
