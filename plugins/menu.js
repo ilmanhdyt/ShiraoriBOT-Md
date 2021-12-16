@@ -7,6 +7,7 @@ let tags = {
   'sticker': 'MENU CONVERT',
   'group': 'MENU GROUP',
   'fun': 'MENU FUN',
+  'sticker': 'MENU CONVERT',
   'internet': 'MENU INTERNET',
   'anime'; 'MENU ANIME',
   'owner': 'MENU OWNER',
