@@ -12,6 +12,7 @@ let tags = {
   'fun': 'MENU FUN',
   'sticker': 'MENU CONVERT',
   'internet': 'MENU INTERNET',
+  'tools': 'MENU TOOLS',
   'anime'; 'MENU ANIME',
   'owner': 'MENU OWNER',
   'advanced': 'Advanced',
