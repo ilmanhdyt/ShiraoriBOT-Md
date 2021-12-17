@@ -24,6 +24,9 @@ global.APIKeys = { // APIKey Here
 global.packname = 'ShiraoriBOT Multi device'
 global.author = 'Ilman'
 
+global.wm = '© MyBotMd'
+global.media = 'https://telegra.ph/file/5d45a3d1e12726d98c5e4.jpg'
+
 global.wait = '_*tunggu sedang di proses...*_'
 global.eror = '_*Server Error*_'
 
