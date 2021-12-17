@@ -34,6 +34,58 @@
   <a href="https://github.com/BochilGaming"><img src="https://github.com/BochilGaming.png?size=128" height="128" width="128" /></a>
 </p>
 
+## How To Change Menu Display
+----
+### Gif Menu Display
+```ts
+ let message = await prepareWAMessageMedia({ video: fs.readFileSync('./media/shiro.mp4'), gifPlayback: true }, { upload: conn.waUploadToServer })
+     const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+     templateMessage: {
+         hydratedTemplate: {
+           videoMessage: message.videoMessage,
+           hydratedContentText: text.trim(),
+           hydratedFooterText: wm,
+           hydratedButtons: [{
+```
+
+### Image Menu Display
+```ts
+let message = await prepareWAMessageMedia({ image: fs.readFileSync('./media/shiraori.jpg')}, { upload: conn.waUploadToServer })
+     const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+     templateMessage: {
+         hydratedTemplate: {
+           imageMessage: message.imageMessage,
+           hydratedContentText: text.trim(),
+           hydratedFooterText: wm,
+           hydratedButtons: [{
+```
+
+### Location Menu Display
+```ts
+ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+     templateMessage: {
+         hydratedTemplate: {
+           hydratedContentText: text.trim(),
+           locationMessage: { 
+           jpegThumbnail: fs.readFileSync('./media/shiraori.jpg') },
+           hydratedFooterText: wm,
+           hydratedButtons: [{       
+```
+
+### Video Menu Display
+```ts
+let message = await prepareWAMessageMedia({ video: fs.readFileSync('./media/shiraori.jpg')}, { upload: conn.waUploadToServer })
+     const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+     templateMessage: {
+         hydratedTemplate: {
+           videoMessage: message.videoMessage,
+           hydratedContentText: text.trim(),
+           hydratedFooterText: wm,
+           hydratedButtons: [{           	
+```
+----           
+
+
 ## HOW TO CONNECT TO MONGODB WHEN RUN IN HEROKU
 
 * Create account and database in mongodb atlas [`watch here`](https://youtu.be/rPqRyYJmx2g)
