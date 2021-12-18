@@ -14,6 +14,7 @@ let tags = {
   'internet': 'MENU INTERNET',
   'tools': 'MENU TOOLS',
   'anime'; 'MENU ANIME',
+  'nsfw': 'MENU NSFW',
   'owner': 'MENU OWNER',
   'advanced': 'Advanced',
   'info': 'MENU INFO',
