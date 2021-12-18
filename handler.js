@@ -39,7 +39,7 @@ module.exports = {
                     if (!('banned' in user)) user.banned = false
                     if (!isNumber(user.warn)) user.warn = 0
                     if (!isNumber(user.level)) user.level = 0
-                    if (!user.role) user.role = 'Beginner'
+                    if (!user.role) user.role = 'Warrior V'
                     if (!('autolevelup' in user)) user.autolevelup = true
 
                     if (!isNumber(user.money)) user.money = 0
