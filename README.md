@@ -24,6 +24,7 @@
 > Jika kamu menemukan semacam bug, harap untuk dimaklumi sementara
 >
 > • NOTE: Pastikan Jaringan kalian lancar dan device kalian bagus:v, 
+> 
 > • Kalo pake termux mungkin bakal lama respon nya, saya sarankan pake heroku
 > 
 > • Kalo mau nambah fitur buat file baru [disini](https://github.com/ilmanhdyt/ShiraoriBOT-Md/tree/Multi-Device/plugins) *Contoh* tebakgambar.js
