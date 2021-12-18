@@ -74,7 +74,7 @@ let message = await prepareWAMessageMedia({ image: fs.readFileSync('./media/shir
 
 ### Video Menu Display
 ```ts
-let message = await prepareWAMessageMedia({ video: fs.readFileSync('./media/shiraori.jpg')}, { upload: conn.waUploadToServer })
+let message = await prepareWAMessageMedia({ video: fs.readFileSync('./media/shiro.mp4')}, { upload: conn.waUploadToServer })
      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
      templateMessage: {
          hydratedTemplate: {
