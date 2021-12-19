@@ -34,6 +34,12 @@ let message = await prepareWAMessageMedia({ image: {url: 'https://telegra.ph/fil
 
            },
                {
+             callButton: {
+               displayText: 'Telkomsel',
+               phoneNumber: '+62 813-5104-7727'
+             }
+           },           
+               {
              quickReplyButton: {
                displayText: '🧒 Owner',
                id: '.owner',
