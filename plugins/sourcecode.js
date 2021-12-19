@@ -1,7 +1,7 @@
 /**
 * jangan ganti ya kakak kakak sekalian
 * ini cuma buat ninggalin credit gw doang :)
-*/
+**/
 
 const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys-md')
 let fs = require('fs')
@@ -27,7 +27,7 @@ https://github.com/ilmanhdyt/ShiraoriBOT-Md`
                {
              quickReplyButton: {
                displayText: 'Ok Bang',
-               id: '.mybot',
+               id: '.menu',
              }
 
            }]
