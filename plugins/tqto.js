@@ -13,7 +13,6 @@ let handler = async (m) => {
     else who = m.sender
     let user = global.db.data.users[who]
 let tqto = `
-
 *BIG THANKS TO*
 
 Nurutomo: https://github.com/
