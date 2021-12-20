@@ -162,21 +162,21 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
            },
            {
              quickReplyButton: {
-               displayText: 'Balance',
-               id: '.my',
+               displayText: 'OWNER',
+               id: '.owner',
              }
            },
                {
              quickReplyButton: {
-               displayText: 'Owner',
-               id: '.owner',
+               displayText: 'DONASI',
+               id: '.donasi',
              }
 
            },
                {
              quickReplyButton: {
-               displayText: 'Donasi',
-               id: '.donasi',
+               displayText: 'CREDIT',
+               id: '.tqto',
              }
 
            }]
