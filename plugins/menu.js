@@ -47,7 +47,7 @@ ${'```%npmdesc```'}
 let handler = async (m, { conn, usedPrefix: _p }) => {
   try {
     let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}'))
-    let { exp, limit, level, role } = global.db.data.users[m.sender]
+    let { exp, limit, level, money, role } = global.db.data.users[m.sender]
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
     let name = conn.getName(m.sender)
     let d = new Date(new Date + 3600000)
@@ -136,47 +136,47 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       totalexp: exp,
       xp4levelup: max - exp,
       github: package.homepage ? package.homepage.url || package.homepage : '[unknown github url]',
-      level, limit, name, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role,
+      level, limit, money, name, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role,
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    let message = await prepareWAMessageMedia({ image: fs.readFileSync('./media/shiraori.jpg') }, { upload: conn.waUploadToServer })
+    let message = await prepareWAMessageMedia({ image: fs.readFileSync('./media/shiraori.jpg') }), { upload: conn.waUploadToServer })
      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
      templateMessage: {
          hydratedTemplate: {
            imageMessage: message.imageMessage,
            hydratedContentText: text.trim(),
+           hydratedFooterText: wm,
            hydratedButtons: [{
              urlButton: {
                displayText: 'Source Code',
-               url: 'https://github.com/ilmanhdyt/ShiraoriBOT-MD'
+               url: 'https://github.com/ilmanhdyt/ShiraoriBOT-Md'
              }
 
            },
                {
              callButton: {
                displayText: 'Call Owner',
-               phoneNumber: '+62 813-5104-7727'
+               phoneNumber: '+6281351047727'
+             }
+           },
+           {
+             quickReplyButton: {
+               displayText: 'Balance',
+               id: '.my',
              }
            },
                {
              quickReplyButton: {
                displayText: 'Owner',
-               id: '.owner'
+               id: '.owner',
              }
 
            },
                {
              quickReplyButton: {
                displayText: 'Donasi',
-               id: '.donasi'
-             }
-
-           },
-               {
-             quickReplyButton: {
-               displayText: 'Runtime',
-               id: '.runtime'
+               id: '.donasi',
              }
 
            }]
@@ -194,9 +194,9 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     throw e
   }
 }
-handler.help = ['menu', 'help', '?']
+handler.help = ['menu']
 handler.tags = ['main']
-handler.command = /^(menu|help|\?)$/i
+handler.command = /^(menu)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
@@ -220,3 +220,5 @@ function clockString(ms) {
   let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
   return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
 }
+
+ 
