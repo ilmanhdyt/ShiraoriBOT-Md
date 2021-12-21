@@ -5,40 +5,45 @@ let levelling = require('../lib/levelling')
 let tags = {
   'main': 'MENU UTAMA',
   'game': 'MENU GAME',
-  'xp': 'MENU EXP',
   'rpg': 'MENU RPG',
-  'sticker': 'MENU CONVERT',
+  'xp': 'MENU EXP',
   'group': 'MENU GROUP',
+  'owner': 'MENU OWNER',
   'fun': 'MENU FUN',
   'sticker': 'MENU CONVERT',
-  'internet': 'MENU INTERNET',
-  'tools': 'MENU TOOLS',
-  'anime'; 'MENU ANIME',
+  'maker': 'MENU MAKER',
+  'github': 'MENU GITHUB',
+  'internet': 'INTERNET',
+  'kerang': 'MENU KERANG',
+  'anime': 'MENU ANIME',
   'nsfw': 'MENU NSFW',
-  'owner': 'MENU OWNER',
-  'advanced': 'Advanced',
+  'tools': 'MENU TOOLS',
+  'advanced': 'ADVANCED',
+  'privasi': 'MENU PRIVASI',
   'info': 'MENU INFO',
 }
 const defaultMenu = {
   before: `
-╭─「 %me 」
-│ Hai, %name!
-│
-│ Tersisa *%limit Limit*
-│ Role *%role*
-│ Level *%level (%exp / %maxexp)* [%xp4levelup lagi untuk levelup]
-│ %totalexp XP in Total
-│ 
-│ Tanggal: *%week %weton, %date*
-│ Tanggal Islam: *%dateIslamic*
-│ Waktu: *%time*
-│
-│ Runtime: *%uptime*
-╰────
+╭──────❑ 「 %me 」 ❑───────
+│ ✾ Runtime: %Runtime
+╰❑
+╭────❑ 「 INFO USER 」 ❑────
+│ ✾ Name: %name 
+│ ✾ Limit: %limit
+│ ✾ Money: %money
+│ ✾ Exp: %totalexp
+│ ✾ Level: %level
+│ ✾ Role: %role
+╰❑
+╭────❑ 「 INFORMASI 」 ❑────
+│ Bot ini masih tahap beta
+│ apabila ada bug/eror harap
+│ lapor ke owner
+╰❑
 %readmore`.trimStart(),
-  header: '╭─「 %category 」',
-  body: '│ • %cmd %islimit %isPremium',
-  footer: '╰────\n',
+  header: '╭───❑「 %category 」❑───',
+  body: '│ ☬ %cmd %islimit %isPremium',
+  footer: '╰❑\n',
   after: `
 *%npmname@^%version*
 ${'```%npmdesc```'}
@@ -140,16 +145,16 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    let message = await prepareWAMessageMedia({ image: fs.readFileSync('./media/shiraori.jpg') }), { upload: conn.waUploadToServer })
+    let message = await prepareWAMessageMedia({ video: fs.readFileSync('./media/shiraori.jpg') }), { upload: conn.waUploadToServer })
      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
      templateMessage: {
          hydratedTemplate: {
-           imageMessage: message.imageMessage,
+           videoMessage: message.videoMessage,
            hydratedContentText: text.trim(),
-           hydratedFooterText: wm,
+           hydratedFooterText: wmku,
            hydratedButtons: [{
              urlButton: {
-               displayText: 'Source Code',
+               displayText: '💠 Source Code',
                url: 'https://github.com/ilmanhdyt/ShiraoriBOT-Md'
              }
 
@@ -162,21 +167,21 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
            },
            {
              quickReplyButton: {
-               displayText: 'OWNER',
-               id: '.owner',
+               displayText: 'Credits',
+               id: '.tqto',
              }
            },
                {
              quickReplyButton: {
-               displayText: 'DONASI',
-               id: '.donasi',
+               displayText: '🧒 Owner',
+               id: '.owner',
              }
 
            },
                {
              quickReplyButton: {
-               displayText: 'CREDIT',
-               id: '.tqto',
+               displayText: '💲 Donasi',
+               id: '.donasi',
              }
 
            }]
