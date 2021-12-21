@@ -24,26 +24,29 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-╭──────❑ 「 %me 」 ❑───────
-│ ✾ Runtime: %Runtime
+╭────ꕥ %me ꕥ────
+│✾ Version: %version
+│✾ Library: Baileys-MD
+│✾ Runtime: %uptime
 ╰❑
-╭────❑ 「 INFO USER 」 ❑────
-│ ✾ Name: %name 
+╭─❑ 「 INFO USER 」 ❑──
+│ ✾ Name: %name
+│ ✾ Status: Free User
 │ ✾ Limit: %limit
 │ ✾ Money: %money
 │ ✾ Exp: %totalexp
 │ ✾ Level: %level
 │ ✾ Role: %role
 ╰❑
-╭────❑ 「 INFORMASI 」 ❑────
+╭─❑ 「 INFORMASI 」 ❑──
 │ Bot ini masih tahap beta
 │ apabila ada bug/eror harap
 │ lapor ke owner
 ╰❑
 %readmore`.trimStart(),
-  header: '╭───❑「 %category 」❑───',
-  body: '│ ☬ %cmd %islimit %isPremium',
-  footer: '╰❑\n',
+  header: '╭─「 %category 」',
+  body: '│ • %cmd %islimit %isPremium',
+  footer: '╰────\n',
   after: `
 *%npmname@^%version*
 ${'```%npmdesc```'}
@@ -52,6 +55,10 @@ ${'```%npmdesc```'}
 let handler = async (m, { conn, usedPrefix: _p }) => {
   try {
     let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}'))
+    let who
+    if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
+    else who = m.sender 
+    let user = global.db.data.users[who]
     let { exp, limit, level, money, role } = global.db.data.users[m.sender]
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
     let name = conn.getName(m.sender)
@@ -145,13 +152,13 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    let message = await prepareWAMessageMedia({ video: fs.readFileSync('./media/shiraori.jpg') }), { upload: conn.waUploadToServer })
      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
      templateMessage: {
          hydratedTemplate: {
-           videoMessage: message.videoMessage,
            hydratedContentText: text.trim(),
-           hydratedFooterText: wmku,
+           locationMessage: { 
+           jpegThumbnail: fs.readFileSync('./media/shiraori.jpg') },
+           hydratedFooterText: wm,
            hydratedButtons: [{
              urlButton: {
                displayText: '💠 Source Code',
@@ -159,17 +166,12 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
              }
 
            },
-               {
+             {
              callButton: {
-               displayText: 'Call Owner',
-               phoneNumber: '+6281351047727'
+               displayText: 'Nomor Owner',
+               PhoneNumber: '0813-5104-7727'
              }
-           },
-           {
-             quickReplyButton: {
-               displayText: 'Credits',
-               id: '.tqto',
-             }
+
            },
                {
              quickReplyButton: {
@@ -184,6 +186,12 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
                id: '.donasi',
              }
 
+           },
+           {
+             quickReplyButton: {
+               displayText: '📍 Credits',
+               id: '.tqto',
+             }
            }]
          }
        }
@@ -225,5 +233,3 @@ function clockString(ms) {
   let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
   return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
 }
-
- 
