@@ -36,6 +36,11 @@
   <a href="https://github.com/BochilGaming"><img src="https://github.com/BochilGaming.png?size=128" height="128" width="128" /></a>
 </p>
 
+## Tester Bot
+* Jika kamu menemukan bug jangan lupa buka Issues
+* Info Lebih Lanjut, Chat [owner-Shiraori](https://wa.me/6281351047727)
+* Kamu bisa testing fitur ShiraoriBOT [disini](https://wa.me/994405374425?text=.menu)
+
 ## How To Change Menu Display
 ----
 ### Gif Menu Display
