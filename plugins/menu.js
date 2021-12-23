@@ -16,6 +16,7 @@ let tags = {
   'internet': 'INTERNET',
   'kerang': 'MENU KERANG',
   'anime': 'MENU ANIME',
+  'downloader': 'MENU DOWNLOAD',
   'nsfw': 'MENU NSFW',
   'tools': 'MENU TOOLS',
   'advanced': 'ADVANCED',
