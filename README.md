@@ -159,7 +159,7 @@ Jika berhasil, akan memberikanmu pesan seperti: `SUCCESS: specified value was sa
  [![Nurutomo](https://github.com/Nurutomo.png?size=150)](https://github.com/Nurutomo) | [![Ilman](https://github.com/ilmanhdyt.png?size=150)](https://github.com/ilmanhdyt) | [![Istikmal](https://github.com/BochilGaming.png?size=150)](https://github.com/BochilGaming)
 ----|----|----
 [Nurutomo](https://github.com/Nurutomo) | [Ilman](https://github.com/ilmanhdyt) | [Istikmal](https://github.com/BochilGaming)
- Author | Recode | yg sering ngebantu 😅
+ Author | yg nambah fitur | yg punya
 
 ## Donate
 - [Saweria](https://saweria.co/ilmanhdyt)
