@@ -1,4 +1,4 @@
-const { sticker1 } = require('../lib/sticker')
+const { sticker1, sticker5 } = require('../lib/sticker')
 
 let handler = async (m, { conn }) => {
     let stiker = false
@@ -8,16 +8,16 @@ let handler = async (m, { conn }) => {
         if (/webp/.test(mime)) {
             let img = await q.download()
             if (!img) throw `reply sticker with command s`
-            stiker = await sticker1(img, false, packname, author)
+            stiker = await sticker5(img, false, packname, author)
         } else if (/image/.test(mime)) {
             let img = await q.download()
             if (!img) throw `reply image with command s`
-            stiker = await sticker1(img, false, packname, author)
+            stiker = await sticker5(img, false, packname, author)
         } else if (/video/.test(mime)) {
             if ((q.msg || q).seconds > 11) return m.reply('max is 10 seconds!')
             let img = await q.download()
             if (!img) throw `reply video with command s`
-            stiker = await sticker(img, false, packname, author)
+            stiker = await sticker5(img, false, packname, author)
         } else if (m.quoted.text) {
             if (isUrl(m.quoted.text)) stiker = await sticker(false, m.quoted.text, packname, author)
             else throw 'URL is not valid! end with jpg/gif/png'
