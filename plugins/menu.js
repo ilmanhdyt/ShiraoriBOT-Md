@@ -20,7 +20,7 @@ let tags = {
   'nsfw': 'MENU NSFW',
   'tools': 'MENU TOOLS',
   'advanced': 'ADVANCED',
-  'privasi': 'MENU PRIVASI',
+  'quotes': 'MENU QUOTES',
   'info': 'MENU INFO',
 }
 const defaultMenu = {
