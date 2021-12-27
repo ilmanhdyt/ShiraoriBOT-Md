@@ -21,6 +21,7 @@ global.APIKeys = { // APIKey Here
 }
 
 // Sticker WM
+global.stiker_wait = 'Stiker sedang dibuat'
 global.packname = 'ShiraoriBOT Multi device'
 global.author = 'Ilman'
 
