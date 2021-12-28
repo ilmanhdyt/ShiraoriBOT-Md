@@ -1,8 +1,6 @@
-/**///////////////////////////////////
-
- diupload oleh https://github.com/uhdahlah
- 
- /*/////////////////////////////*/
+/**
+diupload oleh https://github.com/uhdahlah
+**/
 
 
 let fetch = require('node-fetch')
