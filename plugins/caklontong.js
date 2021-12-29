@@ -1,7 +1,3 @@
-/**
-diupload oleh https://github.com/uhdahlah
-**/
-
 let fs = require('fs')
 
 let timeout = 120000
@@ -24,7 +20,7 @@ Ketik ${usedPrefix}calo untuk bantuan
 Bonus: ${poin} XP
 `.trim()
     conn.caklontong[id] = [
-        await conn.reply(m.chat, caption.trim(), m),
+        await conn.reply(m.chat, caption.trim(), m)
         json, poin,
         setTimeout(() => {
             if (conn.caklontong[id]) conn.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*\n${json.keterangan}`, conn.caklontong[id][0])
