@@ -1,5 +1,9 @@
-const simple = require('./lib/simple')
-const util = require('util')
+let util = require('util')
+let fetch = require('node-fetch')
+let simple = require('./lib/simple')
+const uploadImage = require('./lib/uploadImage')
+const knights = require('knights-canvas')
+let { MessageType } = require('@adiwajshing/baileys-md')
 
 const isNumber = x => typeof x === 'number' && !isNaN(x)
 const delay = ms => isNumber(ms) && new Promise(resolve => setTimeout(resolve, ms))
@@ -43,6 +47,7 @@ module.exports = {
                     if (!('autolevelup' in user)) user.autolevelup = true
 
                     if (!isNumber(user.money)) user.money = 0
+                    if (!isNumber(user.mahar)) user.mahar = 0
                     if (!isNumber(user.healt)) user.healt = 100
                     if (!isNumber(user.limit)) user.limit = 0
                     if (!isNumber(user.potion)) user.potion = 0
@@ -51,17 +56,85 @@ module.exports = {
                     if (!isNumber(user.batu)) user.batu = 0
                     if (!isNumber(user.string)) user.string = 0
                     if (!isNumber(user.petFood)) user.petFood = 0
-
+                    
+                    if (!isNumber(user.ojek)) user.ojek = 0
+                    
+          if (!isNumber(user.ironarmor)) user.ironarmor = 0
+          if (!isNumber(user.goldarmor)) user.goldarmor = 0
+          if (!isNumber(user.magicarmor)) user.magicarmor = 0
+          if (!isNumber(user.peluru)) user.peluru = 0
+          if (!isNumber(user.iron)) user.iron = 0
+          if (!isNumber(user.gold)) user.gold = 0
+          if (!isNumber(user.mgstone)) user.mgstone = 0
+          if (!isNumber(user.peti)) user.peti = 0
+          if (!isNumber(user.slime)) user.slime = 0
+          if (!isNumber(user.skeleton)) user.skeleton = 0
+          if (!isNumber(user.goblin)) user.goblin = 0
+          if (!isNumber(user.wolf)) user.wolf = 0
+          if (!isNumber(user.spiritgrass)) user.spiritgrass = 0
+          if (!isNumber(user.mandragoraleaf)) user.mandragoraleaf = 0
+          if (!isNumber(user.hipokuteplant)) user.hipokuteplant = 0
+          
+          if (!isNumber(user.rusa)) user.rusa = 0
+          if (!isNumber(user.rusabakar)) user.rusabakar = 0
+          if (!isNumber(user.bison)) user.bison = 0
+          if (!isNumber(user.bisonbakar)) user.bisonbakar = 0
+          if (!isNumber(user.babi)) user.babi = 0
+          if (!isNumber(user.babibakar)) user.babibakar = 0
+          if (!isNumber(user.kalkun)) user.kalkun = 0
+          if (!isNumber(user.kalkunbakar)) user.kalkunbakar = 0
+          if (!isNumber(user.kelinci)) user.kelinci = 0
+          if (!isNumber(user.durability)) user.durability = 0
+          if (!isNumber(user.kelincibakar)) user.kelincibakar = 0          
                     if (!isNumber(user.emerald)) user.emerald = 0
                     if (!isNumber(user.diamond)) user.diamond = 0
                     if (!isNumber(user.gold)) user.gold = 0
                     if (!isNumber(user.iron)) user.iron = 0
+
+                    if (!isNumber(user.lastjb)) user.lastjb = 0
+                    if (!('pasangan' in user)) user.pasangan = ''
+                    if (!('catatan' in user)) user.catatan = ''
+                    if (!('nikah' in user)) user.nikah = ''            
 
                     if (!isNumber(user.common)) user.common = 0
                     if (!isNumber(user.uncommon)) user.uncommon = 0
                     if (!isNumber(user.mythic)) user.mythic = 0
                     if (!isNumber(user.legendary)) user.legendary = 0
                     if (!isNumber(user.pet)) user.pet = 0
+                    
+         if (!isNumber(user.saber)) user.saber = 0
+         if (!isNumber(user.caster)) user.caster = 0
+         if (!isNumber(user.rider)) user.rider = 0
+         if (!isNumber(user.berserker)) user.berserker = 0
+         if (!isNumber(user.archer)) user.archer = 0
+         if (!isNumber(user.ruler)) user.ruler = 0
+         if (!isNumber(user.beast)) user.beast = 0
+         
+         if (!isNumber(user.artoriapendragon)) user.artoriapendragon = 0
+         if (!isNumber(user.neroclaudius)) user.neroclaudius = 0
+         if (!isNumber(user.siegfried)) user.siegfried = 0
+         if (!isNumber(user.altera)) user.altera = 0
+         if (!isNumber(user.okitasoji)) user.okitasoji = 0
+         if (!isNumber(user.mordred)) user.mordred = 0
+         if (!isNumber(user.ryogishiki)) user.ryogishiki = 0
+         if (!isNumber(user.rama)) user.rama = 0
+         if (!isNumber(user.lancelot)) user.lancelot = 0
+         if (!isNumber(user.gawain)) user.gawain = 0
+         
+         if (!isNumber(user.medea)) user.medea = 0
+         if (!isNumber(user.mephistopheles)) user.mephistopheles = 0
+         if (!isNumber(user.tamamonomae)) user.tamamonomae = 0
+         if (!isNumber(user.medealily)) user.medealily = 0
+         if (!isNumber(user.nurseryrhyme)) user.nurseryrhyme = 0
+         if (!isNumber(user.solomon)) user.solomon = 0
+         if (!isNumber(user.geronimo)) user.geronimo = 0
+         if (!isNumber(user.irisviel)) user.irisviel = 0
+         if (!isNumber(user.nitocris)) user.nitocris = 0
+         
+         if (!isNumber(user.astolfo)) user.astolfo = 0
+        
+         if (!isNumber(user.archer)) user.archer = 0
+         if (!isNumber(user.ruler)) user.ruler = 0           
 
                     if (!isNumber(user.kuda)) user.kuda = 0
                     if (!isNumber(user.kudaexp)) user.kudaexp = 0
@@ -75,21 +148,31 @@ module.exports = {
                     if (!isNumber(user.kudalastfeed)) user.kudalastfeed = 0
                     if (!isNumber(user.kucinglastfeed)) user.kucinglastfeed = 0
                     if (!isNumber(user.rubahlastfeed)) user.rubahlastfeed = 0
+                    if (!isNumber(user.lastsda)) user.lastsda = 0
                     if (!isNumber(user.anjinglastfeed)) user.anjinglastfeed = 0
 
                     if (!isNumber(user.armor)) user.armor = 0
                     if (!isNumber(user.armordurability)) user.armordurability = 0
                     if (!isNumber(user.sword)) user.sword = 0
                     if (!isNumber(user.sworddurability)) user.sworddurability = 0
+                    if (!isNumber(user.swordpower)) user.swordpower = 0
                     if (!isNumber(user.pickaxe)) user.pickaxe = 0
                     if (!isNumber(user.pickaxedurability)) user.pickaxedurability = 0
                     if (!isNumber(user.fishingrod)) user.fishingrod = 0
                     if (!isNumber(user.fishingroddurability)) user.fishingroddurability = 0
 
+            if (!isNumber(user.rumahsakit)) user.rumahsakit= 0
+            if (!isNumber(user.fortress)) user.fortress = 0
+            if (!isNumber(user.troopcamp)) user.troopcamp = 0
+            if (!isNumber(user.shield)) user.shield = false
+            if (!isNumber(user.pertanian)) user.pertanian = 0
+            if (!isNumber(user.tambang)) user.tambang = 0
+
                     if (!isNumber(user.lastclaim)) user.lastclaim = 0
                     if (!isNumber(user.lastadventure)) user.lastadventure = 0
                     if (!isNumber(user.lastfishing)) user.lastfishing = 0
                     if (!isNumber(user.lastdungeon)) user.lastdungeon = 0
+                    if (!isNumber(user.lastbansos)) user.lastbansos = 0
                     if (!isNumber(user.lastduel)) user.lastduel = 0
                     if (!isNumber(user.lastmining)) user.lastmining = 0
                     if (!isNumber(user.lasthunt)) user.lasthunt = 0
@@ -105,6 +188,7 @@ module.exports = {
                     regTime: -1,
                     afk: -1,
                     afkReason: '',
+                    catatan: '',
                     banned: false,
                     warn: 0,
                     level: 0,
@@ -113,7 +197,6 @@ module.exports = {
 
                     money: 0,
                     healt: 100,
-                    limit: 100,
                     potion: 10,
                     sampah: 0,
                     kayu: 0,
@@ -130,6 +213,8 @@ module.exports = {
                     mythic: 0,
                     legendary: 0,
                     pet: 0,
+                    
+                    durability: 0,
 
                     kuda: 0,
                     kudaexp: 0,
@@ -143,12 +228,14 @@ module.exports = {
                     kudalastfeed: 0,
                     kucinglastfeed: 0,
                     rubahlastfeed: 0,
+                    lastsda: 0,
                     anjinglastfeed: 0,
 
                     armor: 0,
                     armordurability: 0,
                     sword: 0,
                     sworddurability: 0,
+                    swordpower: 0,
                     pickaxe: 0,
                     pickaxedurability: 0,
                     fishingrod: 0,
@@ -176,11 +263,13 @@ module.exports = {
                     if (!('sDemote' in chat)) chat.sDemote = ''
                     if (!('delete' in chat)) chat.delete = true
                     if (!('antiLink' in chat)) chat.antiLink = false
-                    if (!('viewonce' in chat)) chat.viewonce = false
+                    if (!('simi' in chat)) chat.simi = false
+                    if (!isNumber(chat.expired)) chat.expired = 0
+                    if (!('viewonce' in chat)) chat.viewonce = true
                     if (!('antiToxic' in chat)) chat.antiToxic = false
                 } else global.db.data.chats[m.chat] = {
                     isBanned: false,
-                    welcome: false,
+                    welcome: true,
                     detect: false,
                     sWelcome: '',
                     sBye: '',
@@ -188,9 +277,37 @@ module.exports = {
                     sDemote: '',
                     delete: true,
                     antiLink: false,
-                    viewonce: false,
+                    simi: false,
+                    expired: 0,
+                    viewonce: true,
                     antiToxic: true,
                 }
+                
+        let settings = global.db.data.settings
+        if (typeof settings !== 'object') global.db.data.settings = {}
+        if (settings) {
+          if (!'anon' in settings) settings.anon = true
+          if (!'anticall' in settings) settings.anticall = true
+          if (!'antispam' in settings) settings.antispam = true
+          if (!'antitroli' in settings) settings.antitroli = true
+          if (!'backup' in settings) settings.backup = false
+          if (!isNumber(settings.backupDB)) settings.backupDB = 0
+          if (!'groupOnly' in settings) settings.groupOnly = false
+          if (!'jadibot' in settings) settings.groupOnly = false
+          if (!'nsfw' in settings) settings.nsfw = true
+          if (!isNumber(settings.status)) settings.status = 0
+        } else global.db.data.settings = {
+          anon: true,
+          anticall: true,
+          antispam: true,
+          antitroli: true,
+          backup: false,
+          backupDB: 0,
+          groupOnly: false,
+          jadibot: false,
+          nsfw: true,
+          status: 0,
+        } 
             } catch (e) {
                 console.error(e)
             }
@@ -237,10 +354,8 @@ module.exports = {
                 let plugin = global.plugins[name]
                 if (!plugin) continue
                 if (plugin.disabled) continue
-                if (!opts['restrict']) if (plugin.tags && plugin.tags.includes('admin')) {
-                    // global.dfail('restrict', m, this)
-                    continue
-                }
+                if (!opts['restrict']) if (plugin.tags && plugin.tags.includes('admin')) continue
+                if (!opts['nsfw']) if (plugin.tags && plugin.tags.includes('nsfw')) continue
                 const str2Regex = str => str.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&')
                 let _prefix = plugin.customPrefix ? plugin.customPrefix : conn.prefix ? conn.prefix : global.prefix
                 let match = (_prefix instanceof RegExp ? // RegExp Mode?
@@ -290,52 +405,56 @@ module.exports = {
                                 plugin.command === command :
                                 false
 
-                    if (!isAccept) continue
-                    m.plugin = name
-                    if (m.chat in global.db.data.chats || m.sender in global.db.data.users) {
-                        let chat = global.db.data.chats[m.chat]
-                        let user = global.db.data.users[m.sender]
-                        if (name != 'unbanchat.js' && chat && chat.isBanned) return // Except this
-                        if (name != 'unbanuser.js' && user && user.banned) return
-                    }
-                    if (plugin.rowner && plugin.owner && !(isROwner || isOwner)) { // Both Owner
-                        fail('owner', m, this)
-                        continue
-                    }
-                    if (plugin.rowner && !isROwner) { // Real Owner
-                        fail('rowner', m, this)
-                        continue
-                    }
-                    if (plugin.owner && !isOwner) { // Number Owner
-                        fail('owner', m, this)
-                        continue
-                    }
-                    if (plugin.mods && !isMods) { // Moderator
-                        fail('mods', m, this)
-                        continue
-                    }
-                    if (plugin.premium && !isPrems) { // Premium
-                        fail('premium', m, this)
-                        continue
-                    }
-                    if (plugin.group && !m.isGroup) { // Group Only
-                        fail('group', m, this)
-                        continue
-                    } else if (plugin.botAdmin && !isBotAdmin) { // You Admin
-                        fail('botAdmin', m, this)
-                        continue
-                    } else if (plugin.admin && !isAdmin) { // User Admin
-                        fail('admin', m, this)
-                        continue
-                    }
-                    if (plugin.private && m.isGroup) { // Private Chat Only
-                        fail('private', m, this)
-                        continue
-                    }
-                    if (plugin.register == true && _user.registered == false) { // Butuh daftar?
-                        fail('unreg', m, this)
-                        continue
-                    }
+          if (!isAccept) continue
+          m.plugin = name
+          if (m.chat in global.db.data.chats || m.sender in global.db.data.users) {
+            let chat = global.db.data.chats[m.chat]
+            let user = global.db.data.users[m.sender]
+            if (!['unbanchat.js', 'profile.js'].includes(name) && chat && chat.isBanned && !isPrems) return // Kecuali ini, bisa digunakan
+            if (!['unbanchat.js', 'profile.js'].includes(name) && user && user.banned) return
+          }
+          if (plugin.rowner && plugin.owner && !(isROwner || isOwner)) { // Keduanya Owner
+            fail('owner', m, this)
+            continue
+          }
+          if (plugin.rowner && !isROwner) { // Owner sebenarnya
+            fail('rowner', m, this)
+            continue
+          }
+          if (plugin.owner && !isOwner) { // Owner bot
+            fail('owner', m, this)
+            continue
+          }
+          if (plugin.mods && !isMods) { // Moderator
+            fail('mods', m, this)
+            continue
+          }
+          if (plugin.premium && !isPrems) { // Premium
+            fail('premium', m, this)
+            continue
+          }
+          if (plugin.group && !m.isGroup) { // Hanya grup
+            fail('group', m, this)
+            continue
+          } else if (plugin.botAdmin && !isBotAdmin) { // Kamu Admin
+            fail('botAdmin', m, this)
+            continue
+          } else if (plugin.admin && !isAdmin) { // User Admin
+            fail('admin', m, this)
+            continue
+          }
+          if (plugin.private && m.isGroup) { // Hanya Private Chat
+            fail('private', m, this)
+            continue
+          }
+          if (plugin.register == true && _user.registered == false) { // Butuh daftar?
+            fail('unreg', m, this)
+            continue
+          }
+          if (plugin.nsfw && !global.db.data.settings.nsfw) { // Nsfw
+            fail('nsfw', m, this)
+            continue
+          }
                     m.isCommand = true
                     let xp = 'exp' in plugin ? parseInt(plugin.exp) : 17 // XP Earning per command
                     if (xp > 200) m.reply('Ngecit -_-') // Hehehe
@@ -430,57 +549,75 @@ module.exports = {
                 }
             }
 
-            // try {
-            //     require('./lib/print')(m, this)
-            // } catch (e) {
-            //     console.log(m, m.quoted, e)
-            // }
+             try {
+                 require('./lib/print')(m, this)
+             } catch (e) {
+                 console.log(m, m.quoted, e)
+             }
             if (opts['autoread']) await this.chatRead(m.chat, m.isGroup ? m.sender : undefined, m.id || m.key.id).catch(() => { })
             let quequeIndex = this.msgqueque.indexOf(m.id || m.key.id)
             if (opts['queque'] && m.text && quequeIndex !== -1) this.msgqueque.splice(quequeIndex, 1)
         }
     },
-    async participantsUpdate({ id, participants, action }) {
-        if (opts['self']) return
-        // if (id in conn.chats) return // First login will spam
-        if (global.isInit) return
-        let chat = global.db.data.chats[id] || {}
-        let text = ''
-        switch (action) {
-            case 'add':
-            case 'remove':
-                if (chat.welcome) {
-                    let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
-                    for (let user of participants) {
-                        let pp = './src/avatar_contact.png'
-                        try {
-                            pp = await this.getProfilePicture(user)
-                        } catch (e) {
-                        } finally {
-                            text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', this.getName(id)).replace('@desc', groupMetadata.desc.toString()) :
-                                (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
-                            this.sendFile(id, pp, 'pp.jpg', text, null, false, {
-                                contextInfo: {
-                                    mentionedJid: [user]
-                                }
-                            })
-                        }
-                    }
+  async participantsUpdate({ jid, participants, action }) {
+    let chat = global.db.data.chats[jid] || {}
+    let text = ''
+    switch (action) {
+      case 'add':
+      case 'remove':
+        if (chat.welcome) {
+          let groupMetadata = await this.groupMetadata(jid)
+          for (let user of participants) {
+            // let pp = './src/avatar_contact.png'
+            let pp = 'https://i.ibb.co/jr9Nh6Q/Thumb.jpg'
+            let ppgc = 'https://i.ibb.co/jr9Nh6Q/Thumb.jpg'
+            try {
+              pp = await uploadImage(await (await fetch(await this.getProfilePicture(user))).buffer())
+              ppgc = await uploadImage(await (await fetch(await this.getProfilePicture(jid))).buffer())
+            } catch (e) {
+            } finally {
+              text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Selamat datang, @user!').replace('@subject', this.getName(jid)).replace('@desc', groupMetadata.desc ? String.fromCharCode(8206).repeat(4001) + groupMetadata.desc : '') :
+                (chat.sBye || this.bye || conn.bye || 'Sampai jumpa, @user!')).replace(/@user/g, '@' + user.split`@`[0])
+              let wel = await new knights.Welcome()
+                .setUsername(this.getName(user))
+                .setGuildName(this.getName(jid))
+                .setGuildIcon(ppgc)
+                .setMemberCount(groupMetadata.participants.length)
+                .setAvatar(pp)
+                .setBackground("https://i.ibb.co/KhtRxwZ/dark.png")
+                .toAttachment()
+
+              let lea = await new knights.Goodbye()
+                .setUsername(this.getName(user))
+                .setGuildName(this.getName(jid))
+                .setGuildIcon(ppgc)
+                .setMemberCount(groupMetadata.participants.length)
+                .setAvatar(pp)
+                .setBackground("https://i.ibb.co/KhtRxwZ/dark.png")
+                .toAttachment()
+
+              this.sendFile(jid, action === 'add' ? wel.toBuffer() : lea.toBuffer(), 'pp.jpg', text, null, false, {
+                contextInfo: {
+                  mentionedJid: [user]
                 }
-                break
-            case 'promote':
-                text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
-            case 'demote':
-                if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```is no longer Admin```')
-                text = text.replace('@user', '@' + participants[0].split('@')[0])
-                if (chat.detect) this.sendMessage(id, text, MessageType.extendedText, {
-                    contextInfo: {
-                        mentionedJid: this.parseMention(text)
-                    }
-                })
-                break
+              })
+            }
+          }
         }
-    },
+        break
+      case 'promote':
+        text = (chat.sPromote || this.spromote || conn.spromote || '@user sekarang Admin')
+      case 'demote':
+        if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user sekarang bukan Admin')
+        text = text.replace('@user', '@' + participants[0].split`@`[0])
+        if (chat.detect) this.sendMessage(jid, text, MessageType.extendedText, {
+          contextInfo: {
+            mentionedJid: this.parseMention(text)
+          }
+        })
+        break
+    }
+  },
     async delete({ remoteJid, fromMe, id, participant }) {
         if (fromMe) return
         let chats = Object.entries(conn.chats).find(([user, data]) => data.messages && data.messages[id])
@@ -500,27 +637,27 @@ Untuk mematikan fitur ini, ketik
 }
 
 global.dfail = (type, m, conn) => {
-    let msg = {
-        rowner: 'Perintah ini hanya dapat digunakan oleh _*OWWNER!1!1!*_',
-        owner: 'Perintah ini hanya dapat digunakan oleh _*Owner Bot*_!',
-        mods: 'Perintah ini hanya dapat digunakan oleh _*Moderator*_ !',
-        premium: 'Perintah ini hanya untuk member _*Premium*_ !',
-        group: 'Perintah ini hanya dapat digunakan di grup!',
-        private: 'Perintah ini hanya dapat digunakan di Chat Pribadi!',
-        admin: 'Perintah ini hanya untuk *Admin* grup!',
-        botAdmin: 'Jadikan bot sebagai *Admin* untuk menggunakan perintah ini!',
-        unreg: 'Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar Manusia.16*',
-        restrict: 'Fitur ini di *disable*!'
-    }[type]
-    if (msg) return m.reply(msg)
+  let msg = {
+    rowner: '━━━━ 「 *ACCES DENIED* 」━━━━\n\nPerintah ini hanya dapat digunakan oleh *Ilman*',
+    owner: '━━━━ 「 *ACCES DENIED* 」━━━━\n\nPerintah ini hanya dapat digunakan oleh *Ilman*',
+    mods: '━━━━ 「 *ACCES DENIED* 」━━━━\n\nPerintah ini masih dalam mode testing',
+    premium: '━━━━ 「 *ACCES DENIED* 」━━━━\n\nPerintah ini hanya tersedia untuk pengguna *PREMIUM*',
+    group: 'Perintah ini hanya dapat digunakan di grup',
+    private: '━━━━ 「 *ACCES DENIED* 」━━━━\n\nPerintah ini hanya dapat digunakan di *Chat Pribadi*',
+    admin: '━━━━ 「 *ACCES DENIED* 」━━━━\n\nPerintah ini hanya dapat digunakan oleh *ADMIN GRUP*',
+    botAdmin: 'Jadikan bot sebagai *Admin* untuk menggunakan perintah ini',
+    unreg: '━━━━ 「 *NOT REGISTERED* 」━━━━\n\nHai kak, Yuk Daftar Dulu Soalnya Kakak Belum Terdaftar Di Database Shiraori Nih\n\n*━━━━━━ Daftar Dulu Kak ━━━━━━*\n\nKetik : *.daftar nama.umur*\nContoh : *.daftar wahyu.16*',
+    nsfw: 'Fitur Nsfw Tidak Aktif'
+  }[type]
+  if (msg) return m.reply(msg)
 }
 
 let fs = require('fs')
 let chalk = require('chalk')
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
-    fs.unwatchFile(file)
-    console.log(chalk.redBright("Update 'handler.js'"))
-    delete require.cache[file]
-    if (global.reloadHandler) console.log(global.reloadHandler())
+  fs.unwatchFile(file)
+  console.log(chalk.redBright("Update 'handler.js'"))
+  delete require.cache[file]
+  if (global.reloadHandler) console.log(global.reloadHandler())
 })
