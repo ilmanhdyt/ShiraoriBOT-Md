@@ -1,5 +1,4 @@
-let fs = require('fs')
-
+let fetch = require('node-fetch')
 let timeout = 120000
 let poin = 500
 let handler = async (m, { conn, usedPrefix }) => {
@@ -9,9 +8,8 @@ let handler = async (m, { conn, usedPrefix }) => {
         conn.reply(m.chat, 'Masih ada soal belum terjawab di chat ini', conn.caklontong[id][0])
         throw false
     }
-    let res = JSON.parse(fs.readFileSync('./src/caklontong.json'))
-    let random = Math.floor(Math.random() * res.length)
-    let json = res[random]
+    let src = await (await fetch('https://raw.githubusercontent.com/BochilTeam/database/master/games/caklontong.json')).json()
+    let json = src[Math.floor(Math.random() * src.length)]
     let caption = `
 ${json.soal}
 
@@ -20,10 +18,10 @@ Ketik ${usedPrefix}calo untuk bantuan
 Bonus: ${poin} XP
 `.trim()
     conn.caklontong[id] = [
-        await conn.reply(m.chat, caption.trim(), m)
+        await conn.reply(m.chat, caption, m),
         json, poin,
-        setTimeout(() => {
-            if (conn.caklontong[id]) conn.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*\n${json.keterangan}`, conn.caklontong[id][0])
+        setTimeout(async () => {
+            if (conn.caklontong[id]) await conn.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*\n${json.deskripsi}` m)
             delete conn.caklontong[id]
         }, timeout)
     ]
