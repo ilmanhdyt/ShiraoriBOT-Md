@@ -37,7 +37,7 @@
 ## Tester Bot
 * Jika kamu menemukan bug jangan lupa buka Issues
 * Info Lebih Lanjut, Chat [owner-Shiraori](https://wa.me/6281351047727)
-* Kamu bisa testing fitur ShiraoriBOT [disini](https://wa.me/994405374425?text=.menu)
+* Kamu bisa testing fitur ShiraoriBOT [disini](https://wa.me/62895803135347?text=.menu)
 
 ## How To Change Menu Display
 ----
