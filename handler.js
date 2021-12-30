@@ -176,6 +176,7 @@ module.exports = {
                     if (!('sDemote' in chat)) chat.sDemote = ''
                     if (!('delete' in chat)) chat.delete = true
                     if (!('antiLink' in chat)) chat.antiLink = false
+                    if (!('simi' in chat)) chat.simi = false
                     if (!('viewonce' in chat)) chat.viewonce = false
                     if (!('antiToxic' in chat)) chat.antiToxic = false
                 } else global.db.data.chats[m.chat] = {
@@ -188,9 +189,36 @@ module.exports = {
                     sDemote: '',
                     delete: true,
                     antiLink: false,
+                    simi: false,
                     viewonce: false,
                     antiToxic: true,
                 }
+                
+        let settings = global.db.data.settings
+        if (typeof settings !== 'object') global.db.data.settings = {}
+        if (settings) {
+          if (!'anon' in settings) settings.anon = true
+          if (!'anticall' in settings) settings.anticall = true
+          if (!'antispam' in settings) settings.antispam = true
+          if (!'antitroli' in settings) settings.antitroli = true
+          if (!'backup' in settings) settings.backup = false
+          if (!isNumber(settings.backupDB)) settings.backupDB = 0
+          if (!'groupOnly' in settings) settings.groupOnly = false
+          if (!'jadibot' in settings) settings.groupOnly = false
+          if (!'nsfw' in settings) settings.nsfw = true
+          if (!isNumber(settings.status)) settings.status = 0
+        } else global.db.data.settings = {
+          anon: true,
+          anticall: true,
+          antispam: true,
+          antitroli: true,
+          backup: false,
+          backupDB: 0,
+          groupOnly: false,
+          jadibot: false,
+          nsfw: false,
+          status: 0,
+        }                
             } catch (e) {
                 console.error(e)
             }
