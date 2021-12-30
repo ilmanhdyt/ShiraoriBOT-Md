@@ -20,6 +20,15 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.welcome = isEnable
       break
+case 'simi':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.simi = isEnable
+      break  
     case 'antilink':
     case 'antiurl':
       if (!m.isGroup) {
@@ -127,9 +136,10 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       break
     default:
       if (!/[01]/.test(command)) throw `
-┌〔 Daftar Opsi 〕${isOwner ? '\n├ antispam\n├ antitroli\n├ autoread\n├ backup\n├ grouponly\n├ jadibot\n├ nsfw\n├ public\n├ antilink\n├ mycontact' : ''}
+┌〔 Daftar Opsi 〕${isOwner ? '\n├ antispam\n├ antitroli\n├ autoread\n├ simi\n├ backup\n├ grouponly\n├ jadibot\n├ nsfw\n├ public\n├ antilink\n├ mycontact' : ''}
 ├ autolevelup
 ├ antilink
+├ simi
 ├ welcome
 └────
 contoh:
