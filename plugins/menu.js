@@ -28,6 +28,7 @@ const defaultMenu = {
 ╭────ꕥ %me ꕥ────
 │✾ Version: %version
 │✾ Library: Baileys-MD
+│✾ Mode: ${global.opts['self'] ? 'Self' : 'publik'}
 │✾ Runtime: %uptime
 ╰❑
 ╭─❑ 「 INFO USER 」 ❑──
