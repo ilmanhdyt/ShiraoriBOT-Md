@@ -18,7 +18,7 @@ let handler = async (m, { conn, text }) => {
 handler.help = ['delprem [@user]']
 handler.tags = ['owner']
 handler.command = /^(delprem)$/i
-handler.restrict = true
+handler.restrict = false
 
 handler.owner = true
 
