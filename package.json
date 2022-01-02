@@ -1,6 +1,6 @@
 {
     "name": "ShiraoriBOT-Md",
-    "version": "0.4.4",
+    "version": "0.4.5",
     "description": "Simle Bot WhatsApp with Baileys Multi Device",
     "depecrated": false,
     "main": "index.js",
