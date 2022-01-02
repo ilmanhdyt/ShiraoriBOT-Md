@@ -10,6 +10,7 @@ let tags = {
   'premium': 'MENU PREMIUM',
   'group': 'MENU GROUP',
   'absen': 'MENU ABSEN',
+  'vote': 'MENU VOTE',
   'owner': 'MENU OWNER',
   'fun': 'MENU FUN',
   'sticker': 'MENU CONVERT',
