@@ -7,6 +7,7 @@ let tags = {
   'game': 'MENU GAME',
   'rpg': 'MENU RPG',
   'xp': 'MENU EXP',
+  'premium': 'MENU PREMIUM',
   'group': 'MENU GROUP',
   'absen': 'MENU ABSEN',
   'owner': 'MENU OWNER',
