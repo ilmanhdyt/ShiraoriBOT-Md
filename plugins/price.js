@@ -40,8 +40,8 @@ let premium = `
            },
                {
              quickReplyButton: {
-               displayText: 'MENU',
-               id: '.menu',
+               displayText: 'OWNER',
+               id: '.owner',
              }
 
            }]
