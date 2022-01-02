@@ -8,6 +8,7 @@ let tags = {
   'rpg': 'MENU RPG',
   'xp': 'MENU EXP',
   'group': 'MENU GROUP',
+  'absen': 'MENU ABSEN',
   'owner': 'MENU OWNER',
   'fun': 'MENU FUN',
   'sticker': 'MENU CONVERT',
