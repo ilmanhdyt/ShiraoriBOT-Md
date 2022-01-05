@@ -156,7 +156,7 @@ Jika berhasil, akan memberikanmu pesan seperti: `SUCCESS: specified value was sa
  [![Nurutomo](https://github.com/Nurutomo.png?size=150)](https://github.com/Nurutomo) | [![Ilman](https://github.com/ilmanhdyt.png?size=150)](https://github.com/ilmanhdyt) | [![Istikmal](https://github.com/BochilGaming.png?size=150)](https://github.com/BochilGaming)
 ----|----|----
 [Nurutomo](https://github.com/Nurutomo) | [Ilman](https://github.com/ilmanhdyt) | [Istikmal](https://github.com/BochilGaming)
- Author | yg nambah fitur | yg punya
+ Author | yg nambah fitur | yg punya sc
 
 ## Donate
 - [Saweria](https://saweria.co/ilmanhdyt)
