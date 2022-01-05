@@ -51,6 +51,7 @@ module.exports = {
                     if (!isNumber(user.batu)) user.batu = 0
                     if (!isNumber(user.string)) user.string = 0
                     if (!isNumber(user.petFood)) user.petFood = 0
+                    if (!isNumber(user.makananpet)) user.makananpet = 0
 
                     if (!isNumber(user.emerald)) user.emerald = 0
                     if (!isNumber(user.diamond)) user.diamond = 0
