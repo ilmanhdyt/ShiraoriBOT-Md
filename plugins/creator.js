@@ -1,13 +1,28 @@
+const { MessageType } = require('@adiwajshing/baileys-md')
 const PhoneNumber = require('awesome-phonenumber')
 async function handler(m) {
-                let vcard = 'BEGIN:VCARD\n' // metadata of the contact card
-                    + 'VERSION:3.0\n' 
-                    + 'N:;Ilman;;;'
-                    + 'FN:Ilman\n' // full name
-                    + 'ORG:Ilman;\n' // the organization of the contact
-                    + 'TEL;type=CELL;type=VOICE;waid=6281351047727:+62 813-5104-7727\n' // WhatsApp ID + phone number
-                    + 'END:VCARD'
-                conn.sendMessage(m.chat, { contacts: { displayName: 'Ilman', contacts: [{ vcard }] } }, { quoted: m })
+  let name = 'Ilman'
+  number = owner[0].replace(/[^0-9]/g, '')
+  let njid = number + '@s.whatsapp.net'
+
+
+  let name2 = 'Ilman'
+  number2 = owner[0].replace(/[^0-9]/g, '')
+  let njid2 = number2 + '@s.whatsapp.net'
+
+  this.sendMessage(m.chat, {
+    contacts: [{
+      displayname: name, vcard: `
+BEGIN:VCARD
+VERSION:3.0
+N:;${name.replace(/\n/g, '\\n')};;;
+FN:${name.replace(/\n/g, '\\n')}
+TEL;type=CELL;type=VOICE;waid=${number}:${PhoneNumber('+' + number).getNumber('international')}
+EMAIL;type=INTERNET:wakabahiiro5@gmail.com'\n'
+END:VCARD
+`.trim()
+    }]
+  }, ContactsArrayMessage, { quoted: m })
 }
 handler.help = ['owner', 'creator']
 handler.tags = ['info']
