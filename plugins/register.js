@@ -25,7 +25,7 @@ let handler = async function (m, { text, usedPrefix, command }) {
 │➥ Hadiah: ${prems.includes(who.split`@`[0]) ? '✅ Silahkan chat owner untuk claim hadiah' : '❌ Bukan User Premium'}
 ╰──────•
 
-Ketik *.sn* untuk mendapatkan SERIAL NUMBER\n
+Ketik ${usedPrefix} untuk mendapatkan SERIAL NUMBER\n
 sn digunakan untuk unregister
 `.trim())
 }
