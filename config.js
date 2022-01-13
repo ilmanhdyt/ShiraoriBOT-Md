@@ -30,6 +30,7 @@ global.APIKeys = { // APIKey Here
 global.stiker_wait = 'Stiker sedang dibuat'
 global.packname = 'ShiraoriBOT Multi device'
 global.author = 'Ilman'
+global.email = 'wakabahiiro5@gmail.com'
 
 global.wm = '© ShiraoriBOT-Md Made by Ilman'
 global.media = 'https://telegra.ph/file/5d45a3d1e12726d98c5e4.jpg'
