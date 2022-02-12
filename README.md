@@ -19,7 +19,7 @@
 ---
 
 # SHIRAORI BOT Whatsapp MD
-## For Users Termux Install Module [here](https://github.com/ilmanhdyt/node_modules)
+## For Users Te
 ## Information
 > ShiraoriBOT whatsapp using a Baileys library.
 > Jika kamu menemukan semacam bug, harap untuk dimaklumi sementara
