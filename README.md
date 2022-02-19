@@ -127,6 +127,8 @@ pkg install yarn
 git clone https://github.com/ilmanhdyt/ShiraoriBOT-Md
 cd ShiraoriBOT-Md
 yarn
+npm i -g typescript
+tsc -p ./node_modules/@adiwajshing/baileys
 node .
 ```
 
