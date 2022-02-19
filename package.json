@@ -1,6 +1,6 @@
 {
     "name": "ShiraoriBOT-Md",
-    "version": "0.4.5",
+    "version": "0.5.1",
     "description": "Simle Bot WhatsApp with Baileys Multi Device",
     "depecrated": false,
     "main": "index.js",
@@ -36,7 +36,7 @@
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "@adiwajshing/baileys-md": "github:adiwajshing/baileys#multi-device",
+        "@adiwajshing/baileys": "github:adiwajshing/baileys",
         "awesome-phonenumber": "^2.64.0",
         "axios": "^0.24.0",
         "@bochilteam/scraper": "^0.0.2",
