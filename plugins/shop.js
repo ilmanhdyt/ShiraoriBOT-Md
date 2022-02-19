@@ -1,4 +1,4 @@
-let { MessageType } = require('@adiwajshing/baileys-md')
+let { MessageType } = require('@adiwajshing/baileys')
 const potion = 520
 const Spotion = 150 
 const limit = 350
