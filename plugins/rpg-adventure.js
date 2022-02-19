@@ -1,4 +1,4 @@
-let { MessageType } = require('@adiwajshing/baileys-md')
+let { MessageType } = require('@adiwajshing/baileys')
 let handler = async (m, { conn, usedPrefix, DevMode }) => { 
     try { 
         let __timers = (new Date - global.db.data.users[m.sender].lastadventure)
