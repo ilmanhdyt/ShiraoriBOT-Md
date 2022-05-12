@@ -38,6 +38,19 @@ global.media = 'https://telegra.ph/file/5d45a3d1e12726d98c5e4.jpg'
 global.wait = '_*tunggu sedang di proses...*_'
 global.eror = '_*Server Error*_'
 
+global.dtu = 'ɪɴꜱᴛᴀɢʀᴀᴍ'
+global.urlnya = "https://www.instagram.com/ilmanhdyt_"
+
+//============= callButtons =============//
+global.dtc = 'ᴄᴀʟʟ ᴏᴡɴᴇʀ'
+global.phn = '+62 813-5104-7727'
+
+//============= Games ================//
+global.benar = '_*Benar✅*_'
+global.salah = '_*Salah❌*_'
+global.dikit = "dikit lagi, semangat ya :')"
+
+
 global.multiplier = 69 // The higher, The harder levelup
 
 global.rpg = {
