@@ -70,7 +70,7 @@ const { state, saveState } = useSingleFileAuthState(global.authFile)
 const connectionOptions = {
   printQRInTerminal: true,
   auth: state,
-  logger: P({ level: 'debug' })
+  logger: P({ level: 'silent' })
 }
 
 global.conn = simple.makeWASocket(connectionOptions)
