@@ -13,7 +13,7 @@ const defaultMenu = {
 ╰❑
 ╭─❑ 「 INFO USER 」 ❑──
 │ ✾ Name: %name
-│ ✾ Status: ---
+│ ✾ Status: ${premium ? 'Premium' : 'Free'}
 │ ✾ Limit: %limit
 │ ✾ Money: %money
 │ ✾ Exp: %totalexp
@@ -137,7 +137,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 
   try {
     let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}'))
-    let { exp, limit, age, money, level, role, registered } = global.db.data.users[m.sender]
+    let { exp, limit, premium, age, money, level, role, registered } = global.db.data.users[m.sender]
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
     let umur = `*${age == '-1' ? 'Belum Daftar*' : age + '* Thn'}`
     let name = registered ? global.db.data.users[m.sender].name : conn.getName(m.sender)
