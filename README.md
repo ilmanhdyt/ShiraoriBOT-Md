@@ -133,13 +133,13 @@ node .
 ```
 ## CARA RUN 24 JAM DI REPLIT
 ```bash
-*buat akun uptime [`klik disini`](https://uptimerobot.com) 
-*fork repo ini dan run replit
-*masuk mode desktop dan lakukan npm install 
-*lalu klik tombol hijau di console replit 
-*salin tautan yang muncul lalu buka uptime di crome 
-*klik buat monitor baru
-*dan selesai,mudah bukan 
+* buat akun uptime https://uptimerobot.com (copy aja link nya lalu tempel di crome) 
+* fork repo ini dan run replit
+* masuk mode desktop dan lakukan npm install 
+* lalu klik tombol hijau di console replit 
+* salin tautan yang muncul lalu buka uptime di crome 
+* klik buat monitor baru
+* dan selesai,mudah bukan 
 
 ## UNTUK PENGGUNA HEROKU
 
